@@ -1,0 +1,23 @@
+bookdown::gitbook:
+  split_by: chapter
+  split_bib: yes
+  css: ['style.css', 'lab.css']
+  config:
+    toc:
+      before: |
+        <li><a href="./">Conceitos e análises estatísticas com R e JASP</a></li>
+      after: |
+        <li><a href="http://www.anovabr.com/" target="blank">ANOVA</a></li>
+    edit: http://github.com/anovabr/mqt/edit/master/%s
+bookdown::pdf_book:
+  keep_tex: yes
+  toc: yes
+  number_sections: true
+  highlight: tango
+  includes:
+    in_header: preamble.tex
+  latex_engine: pdflatex
+  citation_package: natbib
+  pandoc_args: --top-level-division=chapter
+bookdown::epub_book: default
+bookdown::word_document2: default  # for cross-references
